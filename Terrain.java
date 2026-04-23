@@ -10,6 +10,22 @@ Methods:
     - getCosts(): returns the movement cost, water cost, and food cost of the terrain
 */
 
-public class Terrain {
+public class Terrain 
+{
+    private int movementCost;
+    private int waterCost;
+    private int foodCost;
+
+    public Terrain(int movementCost, int waterCost, int foodCost)
+    {
+        this.movementCost = movementCost;
+        this.waterCost = waterCost;
+        this.foodCost = foodCost;
+    }
+
+    public int[] getCosts()
+    {
+        return new int[] {movementCost, waterCost, foodCost};
+    }
     
 }
