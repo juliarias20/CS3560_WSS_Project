@@ -9,12 +9,14 @@ Variables:
     - String difficulty: how difficult the game is
     - Square[][] squares: the matrix of Square objects that makes up the map
 Methods:
-    - getSquare(x: int, y: int): returns the Square at coordinate (x,y)
+    - getSquare(int x, int y): returns the Square at coordinate (x,y)
     - getDifficulty(): returns the game difficulty
-    - setDifficulty(difficulty: String): sets the difficulty of the game
+    - setDifficulty(String difficulty): sets the difficulty of the game
     - getSize(): returns the size of the map as an array
-    - setSize(width: int, height: int): sets the size of the map
+    - setSize(int width, int height): sets the size of the map
     - generateMap(): creates a Square matrix using the width and height
+TODO:
+    1. add terrain w/ difficulty
 */
 
 public class Map {
@@ -48,6 +50,6 @@ public class Map {
     public void generateMap() {
         this.squares = new Square[this.height][this.width];
 
-        //TODO: terrain generation with difficulty
+        //TODO: 1
     }
 }
