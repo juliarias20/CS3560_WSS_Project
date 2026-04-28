@@ -11,20 +11,25 @@ Variables:
 Methods:
     - getSquare(int x, int y): returns the Square at coordinate (x,y)
     - getDifficulty(): returns the game difficulty
-    - setDifficulty(String difficulty): sets the difficulty of the game
     - getSize(): returns the size of the map as an array
-    - setSize(int width, int height): sets the size of the map
     - generateMap(): creates a Square matrix using the width and height
-TODO:
-    1. add terrain w/ difficulty
 */
+
+import java.util.Random;
 
 public class Map {
 
     private int width;
     private int height;
     private String difficulty;
-    private Square[][] squares;
+    private Square[][] squares = new Square[height][width];
+
+    public Map(int width, int height, String difficulty, Square[][] squares) {
+        this.width = width;
+        this.height = height;
+        this.difficulty = difficulty;
+        this.squares = squares;
+    }
 
     public Square getSquare(int x, int y) {
         return squares[y][x];
@@ -34,22 +39,26 @@ public class Map {
         return difficulty;
     }
 
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
-
     public int[] getSize() {
         return new int[] {width, height};
     }
 
-    public void setSize(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
-
     public void generateMap() {
-        this.squares = new Square[this.height][this.width];
-
-        //TODO: 1
+        squares = new Square[height][width];
+        Random rand = new Random();
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                Square map_square = getSquare(j, i);
+                if (difficulty.equals("easy")) {
+                    map_square.setTerrain(rand.nextInt(3) + 1);
+                }
+                else if (difficulty.equals("medium")) {
+                    map_square.setTerrain(rand.nextInt(3) + 2);
+                }
+                else {
+                    map_square.setTerrain(rand.nextInt(3) + 3);
+                }
+            }
+        }
     }
 }
