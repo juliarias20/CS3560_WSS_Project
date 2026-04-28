@@ -15,6 +15,7 @@ Methods:
 TODO: 
     -- array list errors remove when Item class is implemented
     -- test the add and remove item methods when Item class is implemented
+    -- implement array list of items, create method to generate items based on randomization?
 */
 
 import java.util.ArrayList;
@@ -26,16 +27,24 @@ public class Square
     private Terrain terrain_type;
     private ArrayList<Item> items = new ArrayList<>();
 
-    public Square(int x, int y, Terrain terrain_type, ArrayList<Item> items)
+    public Square(int x, int y, Terrain terrain_type)
     {
         this.x = x;
         this.y = y;
         this.terrain_type = terrain_type;
-        this.items = items;
+    }
+
+    public void generateBonus()
+    {
+        
     }
 
     public ArrayList<Item> getItems() 
     {
+        if(items.isEmpty())
+        {
+            System.out.println("There are no bonus items in this square.");
+        }
         return items;
     }
 
