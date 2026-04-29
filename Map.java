@@ -13,6 +13,8 @@ Methods:
     - getDifficulty(): returns the game difficulty
     - getSize(): returns the size of the map as an array
     - generateMap(): creates a Square matrix using the width and height
+TODO:
+    1. Square.setTerrain()
 */
 
 import java.util.Random;
@@ -46,17 +48,36 @@ public class Map {
     public void generateMap() {
         squares = new Square[height][width];
         Random rand = new Random();
+        int randint;
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 Square map_square = getSquare(j, i);
                 if (difficulty.equals("easy")) {
-                    map_square.setTerrain(rand.nextInt(3) + 1);
+                    randint = rand.nextInt(3) + 1;
                 }
                 else if (difficulty.equals("medium")) {
-                    map_square.setTerrain(rand.nextInt(3) + 2);
+                    randint = rand.nextInt(3) + 2;
                 }
                 else {
-                    map_square.setTerrain(rand.nextInt(3) + 3);
+                    randint = rand.nextInt(3) + 3;
+                }
+                //TODO 1
+                switch (randint) {
+                    case 1:
+                        map_square.setTerrain(Plains);
+                        break;
+                    case 2:
+                        map_square.setTerrain(Forest);
+                        break;
+                    case 3:
+                        map_square.setTerrain();
+                        break;
+                    case 4:
+                        map_square.setTerrain(Desert);
+                        break;
+                    case 5:
+                        map_square.setTerrain(Mountain);
+                        break;
                 }
             }
         }
