@@ -73,7 +73,7 @@ public class Map {
         List<int[]> stalls = candidateStallCells(sx, sy);
         Collections.shuffle(stalls, rnd);
         Trader[] personalities = {
-                new SteadfastTrader(), new QuickTemperTrader(), new WheelerTrader()
+                new SteadfastTrader(), new QuickTemperTrader()
         };
         Collections.shuffle(java.util.Arrays.asList(personalities), rnd);
         if (stalls.size() >= 2) {
