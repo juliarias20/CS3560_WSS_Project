@@ -11,8 +11,6 @@ package wss;
 
 public class Mountain extends Terrain
 {
-    private int random_num = 5;
-
     public Mountain()
     {
         /**

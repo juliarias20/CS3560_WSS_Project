@@ -9,8 +9,6 @@ package wss;
 
 public class Plains extends Terrain
 {
-    private int random_num = 1;
-
     public Plains()
     {
         /**

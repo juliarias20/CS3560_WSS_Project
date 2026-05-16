@@ -11,7 +11,6 @@ package wss;
  */
 public class Desert extends Terrain
 {
-    private int random_num = 4;
     public Desert()
     {
         /**

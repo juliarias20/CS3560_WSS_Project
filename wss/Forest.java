@@ -10,7 +10,6 @@ package wss;
  */
 public class Forest extends Terrain
 {
-    private int random_num = 2;
     public Forest()
     {
         /**
